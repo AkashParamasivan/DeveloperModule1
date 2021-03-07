@@ -1,17 +1,15 @@
 ﻿@model DeveloperModule.Models.Bug
 
 @{
-    ViewBag.Title = "ViewBugs";
+    ViewBag.Title = "ViewBugsTester";
 }
 
-<h2>ViewBugs</h2>
+<h2>ViewBugsTester</h2>
 
 <div>
-    @*<h4>Bug</h4>*@
+    <h4>Bug</h4>
     <hr />
     <dl class="dl-horizontal">
-
-
         <dt>
             @Html.DisplayNameFor(model => model.bugdesc)
         </dt>
@@ -19,23 +17,26 @@
         <dd>
             @Html.DisplayFor(model => model.bugdesc)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.projname)
         </dt>
+
         <dd>
             @Html.DisplayFor(model => model.projname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.devid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.devid)
         </dd>
 
     </dl>
 </div>
 <p>
-
-
-    @* @Html.ActionLink("Edit", "Edit", new { id = Model.bugid }) |*@
-    @*@Html.ActionLink("Update bug fix", "UpdateBug", new { id = Model.devid})|*@
-    @Html.ActionLink("Back to List", "ReadD")
-
-
-
-
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.bugid }) |*@
+    @Html.ActionLink("Back", "Read")
 </p>

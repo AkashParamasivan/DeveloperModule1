@@ -126,6 +126,9 @@
     <Content Include="Views\User\UpdateBug.cshtml" />
     <Content Include="Views\User\ViewBugs.cshtml" />
     <Content Include="Views\User\ViewModule.cshtml" />
+    <Content Include="Views\User\Read.cshtml" />
+    <Content Include="Views\User\ViewModuleTester.cshtml" />
+    <Content Include="Views\User\ViewBugsTester.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

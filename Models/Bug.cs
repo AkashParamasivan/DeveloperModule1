@@ -16,7 +16,6 @@ namespace DeveloperModule.Models
         public string projname { get; set; }
         public int devid { get; set; }
 
-        
         [ForeignKey("devid")]
         public Developer Developer { get; set; }
 

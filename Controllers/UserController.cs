@@ -41,7 +41,7 @@ namespace DeveloperModule.Controllers
         [HttpGet] // Set the attribute to Read 
         public ActionResult Read()
         {
-            var data = db.EloginDetails.ToList();
+            var data = db.Developers.ToList();
             return View(data);
 
         }
@@ -186,6 +186,21 @@ namespace DeveloperModule.Controllers
 
 
         }
+        public ActionResult ViewBugsTester(int? id)
+        {
+
+            Bug data = db.bugs.FirstOrDefault(x => x.devid == id);
+            if (data != null)
+            {
+
+                return View(data);
+
+
+            }
+            return View();
+
+
+        }
 
         public ActionResult UpdateBug(int id)
         {
@@ -220,7 +235,22 @@ namespace DeveloperModule.Controllers
 
         }
 
+
         public ActionResult ViewModule(int? id)
+        {
+            Module data = db.Modules.FirstOrDefault(x => x.devid == id);
+            if (data != null)
+            {
+
+                return View(data);
+
+
+            }
+            return View();
+
+
+        }
+        public ActionResult ViewModuleTester(int? id)
         {
             Module data = db.Modules.FirstOrDefault(x => x.devid == id);
             if (data != null)

@@ -1,0 +1,36 @@
+﻿@model DeveloperModule.Models.Module
+
+@{
+    ViewBag.Title = "ViewModuleTester";
+}
+
+<h2>ViewModuleTester</h2>
+
+<div>
+    <h4>Module</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.moduledesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moduledesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.projname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.projname)
+        </dd>
+
+     
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.moduleid }) |*@
+    @Html.ActionLink("Back", "Read")
+</p>

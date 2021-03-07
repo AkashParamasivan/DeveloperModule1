@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DeveloperModule.Models.Developer>
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h2>Welcome tester</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.projectstatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.projname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.projectstatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.projname)
+        </td>
+        <td>
+            @Html.ActionLink("RaiseBug", "bugdev", new { id = item.devid }) |
+            @Html.ActionLink("UpdateBugstatus", "UpdateBug", new { id = item.devid }) |
+            @Html.ActionLink("ViewModuleDetails", "ViewModuleTester", new { id = item.devid }) |
+            @Html.ActionLink("ViewBugDetails", "ViewBugsTester", new { id = item.devid })
+        </td>
+    </tr>
+}
+
+</table>
