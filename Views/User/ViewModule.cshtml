@@ -1,0 +1,41 @@
+﻿@model DeveloperModule.Models.Module
+
+@{
+    ViewBag.Title = "ViewModule";
+}
+
+<h2>ViewModule</h2>
+
+<div>
+    @*<h4>Module</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Developer.devid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Developer.devid)
+        </dd>*@
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.moduledesc)*@
+            Module Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moduledesc)
+        </dd>
+        <dt>
+            ProjectName
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.projname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.moduleid }) |*@
+    @Html.ActionLink("Back to List", "ReadD")
+</p>

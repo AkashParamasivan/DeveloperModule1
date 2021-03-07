@@ -1,0 +1,43 @@
+﻿@model DeveloperModule.Models.Developer
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Project Status</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.devid, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.devid, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.devid, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.projectstatus, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.projectstatus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.projectstatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update-Status" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+<div>@ViewBag.msg</div>
+<div>
+    @Html.ActionLink("Back to List", "ReadD")
+</div>

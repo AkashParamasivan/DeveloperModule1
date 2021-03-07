@@ -1,0 +1,61 @@
+﻿@model DeveloperModule.Models.Bug
+
+@{
+    ViewBag.Title = "Bug";
+}
+
+<h2>bugdev</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+<div class="form-horizontal">
+    <h4>Bug</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.bugid, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.bugid, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.bugdesc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.bugdesc, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.bugdesc, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.bugdesc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.devid, "devid", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.devid, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.devid, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.projname, "ProjectName", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.projname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.projname, "", new { @class = "text-danger" })
+            </div>
+            @*<div class="col-md-10">
+                @Html.DropDownList("devid", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.devid, "", new { @class = "text-danger" })
+            </div>*@
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</div>
+}
+<div>
+    @Html.ActionLink("Back", "ViewBugs")
+</div>
